@@ -1,0 +1,21 @@
+<template name="layout">
+    {{> yield}}
+</template>
+
+<template name="login">
+    {{> loginButtons}}
+    {{#if currentUser}}
+        {{> authorize}}
+        {{> generateAPIKeys}}
+    {{/if}}
+</template>
+
+<template name="authorize">
+    <button class="authorize">Authorize</button>
+</template>
+
+<template name="generateAPIKeys">
+    {{#unless clientCount}}
+        <button class="generateAPIKey">Generate</button>
+    {{/unless}}
+</template>
